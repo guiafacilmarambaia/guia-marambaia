@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Religiosos - Guia Fácil Marambaia</title>
+    <style>
+        :root { --verde-guajara: #1E5631; --amarelo-manga: #FFC107; --fundo-offwhite: #F8F9FA; --texto-escuro: #212529; --cinza-claro: #E9ECEF; --whatsapp-green: #25D366; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--fundo-offwhite); color: var(--texto-escuro); display: flex; justify-content: center; }
+        .app-container { width: 100%; max-width: 450px; min-height: 100vh; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; position: relative; padding-bottom: 75px; }
+        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; gap: 15px; }
+        .back-btn { font-size: 1.2rem; text-decoration: none; color: white; }
+        header h1 { font-size: 1.2rem; font-weight: 600; }
+        main { padding: 20px; flex-grow: 1; }
+        .menu-retratil { margin-bottom: 10px; border: 1px solid var(--cinza-claro); border-radius: 8px; overflow: hidden; background: #ffffff; }
+        .menu-check { display: none; }
+        .menu-botao { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: #ffffff; font-weight: 600; font-size: 0.9rem; cursor: pointer; border-left: 5px solid var(--verde-guajara); }
+        .menu-seta { transition: transform 0.2s; font-size: 0.75rem; color: #6c757d; }
+        .menu-conteudo { max-height: 0; overflow: hidden; background: #ffffff; }
+        .menu-check:checked ~ .menu-conteudo { max-height: 2000px; padding: 10px 15px; border-top: 1px solid var(--cinza-claro); }
+        .menu-check:checked ~ .menu-botao .menu-seta { transform: rotate(90deg); }
+        .place-card { background: var(--fundo-offwhite); border: 1px solid var(--cinza-claro); border-radius: 8px; padding: 12px; margin: 8px 0; font-size: 0.85rem; }
+        .place-name { font-size: 0.95rem; font-weight: bold; color: #0066cc; text-decoration: underline; margin-bottom: 4px; display: block; }
+        .place-info { margin: 3px 0; color: #495057; }
+        .btn-whatsapp { display: inline-flex; align-items: center; gap: 5px; background: var(--whatsapp-green); color: white; text-decoration: none; padding: 5px 10px; border-radius: 6px; font-weight: bold; margin-top: 6px; font-size: 0.78rem; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header><a href="index.html" class="back-btn">⬅️</a><h1>4. Religiosos</h1></header>
+        <main>
+            <div class="menu-retratil">
+                <input type="checkbox" id="rel-1" class="menu-check">
+                <label for="rel-1" class="menu-botao"><span>Igrejas Católicas</span><span class="menu-seta">▶</span></label>
+                <div class="menu-conteudo">
+                    <div class="place-card">
+                        <a href="https://google.com" target="_blank" class="place-name">Paróquia São Jorge</a>
+                        <p class="place-info">📍 <strong>Endereço:</strong> Av. Dalva, 445 - Marambaia</p>
+                        <a href="https://wa.me" target="_blank" class="btn-whatsapp">💬 WhatsApp Secretaria</a>
+                    </div>
+                    <div class="place-card">
+                        <a href="https://google.com" target="_blank" class="place-name">Paróquia de Jesus Ressuscitado</a>
+                        <p class="place-info">📍 <strong>Endereço:</strong> Tv. Ourém, 53 - Marambaia</p>
+                        <p class="place-info">📞 <strong>Telefone:</strong> (91) 3277-4643</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-retratil">
+                <input type="checkbox" id="rel-2" class="menu-check">
+                <label for="rel-2" class="menu-botao"><span>Igrejas Evangélicas e Outras Denominações</span><span class="menu-seta">▶</span></label>
+                <div class="menu-conteudo">
+                    <div class="place-card">
+                        <a href="https://google.com" target="_blank" class="place-name">AD Marambaia Church (Assembleia de Deus)</a>
+                        <p class="place-info">📍 <strong>Endereço:</strong> Av. Dalva, 132 - Marambaia</p>
+                        <p class="place-info">📞 <strong>Telefone:</strong> (91) 3352-0179</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

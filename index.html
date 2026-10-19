@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Fácil Marambaia</title>
+    <style>
+        :root {
+            --verde-guajara: #1E5631;
+            --amarelo-manga: #FFC107;
+            --fundo-offwhite: #F8F9FA;
+            --texto-escuro: #212529;
+            --cinza-claro: #E9ECEF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--fundo-offwhite); color: var(--texto-escuro); display: flex; justify-content: center; }
+        
+        .app-container {
+            width: 100%;
+            max-width: 450px;
+            min-height: 100vh;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-bottom: 85px;
+        }
+
+        header {
+            background-color: var(--verde-guajara);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .header-top { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; margin-bottom: 10px; opacity: 0.9; }
+        header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 5px; }
+        header p { font-size: 0.9rem; opacity: 0.9; }
+
+        .logo-container { text-align: center; padding: 15px 0; display: flex; justify-content: center; font-size: 0.8rem; font-weight: bold; color: #6c757d; line-height: 1.2; }
+
+        main { padding: 10px 20px 20px 20px; flex-grow: 1; }
+        .section-title { font-size: 1.1rem; margin-bottom: 15px; color: var(--verde-guajara); font-weight: 600; border-bottom: 2px solid var(--amarelo-manga); padding-bottom: 4px; }
+        
+        .categories-grid { display: flex; flex-direction: column; gap: 12px; }
+        .category-link { text-decoration: none; color: inherit; display: block; }
+        
+        .category-card { 
+            background-color: var(--fundo-offwhite); 
+            border-left: 5px solid var(--amarelo-manga); 
+            padding: 16px; 
+            border-radius: 8px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            cursor: pointer; 
+        }
+        .category-card.destaque-historico { border-left-color: #007bff; background-color: #e2f0fe; }
+        
+        .card-main-info { display: flex; align-items: center; }
+        .category-icon { font-size: 1.4rem; margin-right: 15px; }
+        .category-info h3 { font-size: 0.95rem; font-weight: 600; color: var(--texto-escuro); }
+        .category-seta { color: #6c757d; font-size: 0.8rem; }
+        
+        nav { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 12px 15px; display: flex; justify-content: space-between; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; gap: 10px; }
+        .nav-item { text-align: center; font-size: 0.95rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 10px; border-radius: 4px; flex-grow: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .nav-item.btn-nav-inicio { background-color: #1E5631; border: 1px solid #143d20; }
+        .nav-item.btn-nav-mapa { background-color: #0088cc; }
+        .nav-item.btn-nav-eventos { background-color: #cc3300; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-top">
+                <span>Guia Comercial e Social</span>
+                <span>Português / English</span>
+            </div>
+            <h1>Guia Fácil Marambaia</h1>
+            <p>Educação, Cultura e Serviços Compartilhados</p>
+        </header>
+        
+        <div class="logo-container">
+            <div>Logo Guia Fácil<br>Marambaia</div>
+        </div>
+        
+        <main>
+            <h2 class="section-title">Serviços do Bairro</h2>
+            <div class="categories-grid">
+                
+                <!-- BOTÃO DESTAQUE: HISTÓRICO -->
+                <a href="historico.html" class="category-link">
+                    <div class="category-card destaque-historico">
+                        <div class="card-main-info">
+                            <span class="category-icon">📖</span>
+                            <div class="category-info"><h3>Histórico do Bairro da Marambaia</h3></div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+                <!-- 1. SERVIÇOS EDUCACIONAIS -->
+                <a href="educacao.html" class="category-link">
+                    <div class="category-card">
+                        <div class="card-main-info">
+                            <span class="category-icon">🎓</span>
+                            <div class="category-info"><h3>1. Serviços Educacionais</h3></div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+                <!-- 2. SERVIÇOS DE SAÚDE -->
+                <a href="saude.html" class="category-link">
+                    <div class="category-card">
+                        <div class="card-main-info">
+                            <span class="category-icon">🏥</span>
+                            <div class="category-info"><h3>2. Serviços de Saúde</h3></div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+                <!-- 3. LAZER -->
+                <a href="lazer.html" class="category-link">
+                    <div class="category-card">
+                        <div class="card-main-info">
+                            <span class="category-icon">🌳</span>
+                            <div class="category-info"><h3>3. Lazer</h3></div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+                <!-- 4. RELIGIOSOS -->
+                <a href="religioso.html" class="category-link">
+                    <div class="category-card">
+                        <div class="card-main-info">
+                            <span class="category-icon">⛪</span>
+                            <div class="category-info"><h3>4. Religiosos</h3></div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+                <!-- 5. TRANSPORTES -->
+                <a href="transporte.html" class="category-link">
+                    <div class="category-card">
+                        <div class="category-info">
+                            <div class="card-main-info">
+                                <span class="category-icon">🚌</span>
+                                <div><h3>5. Transportes</h3></div>
+                            </div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+                <!-- 6. SEGURANÇA -->
+                <a href="seguranca.html" class="category-link">
+                    <div class="category-card">
+                        <div class="card-main-info">
+                            <span class="category-icon">🛡️</span>
+                            <div class="category-info"><h3>6. Segurança</h3></div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+                <!-- 7. AMBIENTAL -->
+                <a href="ambiental.html" class="category-link">
+                    <div class="category-card">
+                        <div class="card-main-info">
+                            <span class="category-icon">🌱</span>
+                            <div class="category-info"><h3>7. Ambiental</h3></div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+                <!-- 8. CULTURAL -->
+                <a href="cultural.html" class="category-link">
+                    <div class="category-card">
+                        <div class="card-main-info">
+                            <span class="category-icon">🎭</span>
+                            <div class="category-info"><h3>8. Cultural</h3></div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+                <!-- 9. COMÉRCIO & AUTÔNOMOS -->
+                <a href="comercio.html" class="category-link">
+                    <div class="category-card">
+                        <div class="card-main-info">
+                            <span class="category-icon">🛍️</span>
+                            <div class="category-info"><h3>9. Comércio & Autônomos</h3></div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+                <!-- 10. ESTATÍSTICAS POPULACIONAIS -->
+                <a href="populacao.html" class="category-link">
+                    <div class="category-card">
+                        <div class="card-main-info">
+                            <span class="category-icon">📊</span>
+                            <div class="category-info"><h3>10. Estatísticas Populacionais</h3></div>
+                        </div>
+                        <span class="category-seta">▶</span>
+                    </div>
+                </a>
+
+            </div>
+        </main>
+
+        <nav>
+            <a href="index.html" class="nav-item btn-nav-inicio">🏠 Início</a>

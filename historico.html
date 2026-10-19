@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico da Marambaia</title>
+    <style>
+        :root { --verde-guajara: #1E5631; --amarelo-manga: #FFC107; --fundo-offwhite: #F8F9FA; --texto-escuro: #212529; --cinza-claro: #E9ECEF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--fundo-offwhite); color: var(--texto-escuro); display: flex; justify-content: center; }
+        .app-container { width: 100%; max-width: 450px; min-height: 100vh; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; position: relative; padding-bottom: 75px; }
+        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; gap: 15px; }
+        .back-btn { font-size: 1.2rem; text-decoration: none; color: white; }
+        header h1 { font-size: 1.2rem; font-weight: 600; }
+        main { padding: 20px; flex-grow: 1; }
+        .place-card { background: var(--fundo-offwhite); border: 1px solid var(--cinza-claro); border-radius: 8px; padding: 16px; margin: 10px 0; font-size: 0.85rem; line-height: 1.4; }
+        .place-name { font-size: 1.05rem; font-weight: bold; color: var(--verde-guajara); margin-bottom: 6px; }
+        .credit-title { font-weight: bold; margin-top: 12px; border-top: 1px dashed #dee2e6; padding-top: 8px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header><a href="index.html" class="back-btn">⬅️</a><h1>Histórico da Marambaia</h1></header>
+        <main>
+            <div class="place-card">
+                <div class="place-name">Origem e Ocupação Urbana</div>
+                <p>Nascido a partir de antigos eixos e traçados ferroviários vizinhos a glebas de uso militar, o bairro expandiu-se expressivamente nas últimas décadas. A consolidação urbana deu-se com a abertura e pavimentação de grandes corredores comerciais e sociais, como a Av. Rodolfo Chermont, Av. Tavares Bastos e a icônica Rua da Marinha.</p>
+                
+                <p class="credit-title">Idealizadores Científicos & Pedagógicos:</p>
+                <p>👨‍🏫 <strong>Prof. Waldinei do Carmo de Souza</strong><br><em>Professor de Geografia</em></p>
+                <p style="margin-top: 4px;">👨‍🏫 <strong>Prof. Odeny Cleidson da Silva Lima</strong><br><em>Professor de Inglês</em></p>
+                
+                <p class="credit-title">Corpo Administrativo:</p>
+                <p>👤 <strong>Osvalcy Claudio Lima</strong><br><em>Administrador & Editor Geral</em></p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

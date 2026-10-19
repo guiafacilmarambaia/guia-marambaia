@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca - Guia Fácil Marambaia</title>
+    <style>
+        :root { --verde-guajara: #1E5631; --amarelo-manga: #FFC107; --fundo-offwhite: #F8F9FA; --texto-escuro: #212529; --cinza-claro: #E9ECEF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--fundo-offwhite); color: var(--texto-escuro); display: flex; justify-content: center; }
+        .app-container { width: 100%; max-width: 450px; min-height: 100vh; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; position: relative; padding-bottom: 70px; }
+        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; gap: 15px; }
+        .back-btn { font-size: 1.2rem; text-decoration: none; color: white; }
+        header h1 { font-size: 1.2rem; font-weight: 600; }
+        main { padding: 20px; flex-grow: 1; }
+        .results-count { font-size: 0.85rem; color: #6c757d; margin-bottom: 15px; }
+        .place-card { background: #ffffff; border: 1px solid var(--cinza-claro); border-radius: 12px; padding: 16px; margin-bottom: 15px; text-align: left; }
+        .place-name { font-size: 1.1rem; font-weight: 600; color: var(--verde-guajara); margin-bottom: 4px; }
+        .place-segment { font-size: 0.8rem; color: #6c757d; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: bold; }
+        .place-info { font-size: 0.9rem; margin-bottom: 5px; color: #495057; }
+        nav { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 12px 0; display: flex; justify-content: space-around; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; }
+        .nav-item { text-align: center; font-size: 0.75rem; color: #6c757d; text-decoration: none; width: 33.3%; }
+        .nav-icon { font-size: 1.3rem; display: block; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header><a href="index.html" class="back-btn">⬅️</a><h1>Resultados da Busca</h1></header>
+        <main>
+            <p id="termo-pesquisado" class="results-count">Buscando...</p>
+            <div id="container-resultados"></div>
+        </main>
+        <nav>
+            <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span>Início</a>
+            <a href="https://google.com" target="_blank" class="nav-item"><span class="nav-icon">📍</span>Mapa</a>
+            <a href="eventos.html" class="nav-item"><span class="nav-icon">📅</span>Eventos</a>
+        </nav>
+    </div>
+
+    <script>
+        var locaisMarambaia = [
+            // COMÉRCIO LOCAL
+            { nome: "Feira da Marambaia (Médici)", cat: "Alimentos e Almoço feiras mercados" },
+            { nome: "Mercantil Du Bairro", cat: "Supermercado & Mercearia mercados" },
+            { nome: "Pernambuco Lanches", cat: "Lanchonete & Salgados lanches" },
+            { nome: "Point do Frango Marambaia", cat: "Assados & Refeições lanches frangos" },
+            { nome: "Caiçara", cat: "Pizzaria, Hamburgueria e Sorveteria lanches pizzas" },
+            // SERVIÇOS E EDUCAÇÃO
+            { nome: "UPA 24h - Marambaia", cat: "⚠️ Saúde Pública hospitais" },
+            { nome: "Colégio Sophos Marambaia", cat: "🎓 Educação / Escola colegios" },
+            // CULTURA E LAZER
+            { nome: "Praça Dom Alberto Ramos", cat: "🌳 Lazer praças" },
+            { nome: "Praça Tancredo Neves", cat: "🌳 Lazer praças gastronomia" },
+            { nome: "Paróquia São Jorge", cat: "⛪ Comunidade / Fé igrejas paroquias" },
+            // EVENTOS (Adicionados diretamente na busca por palavra-chave)
+            { nome: "🎬 Cine Estação Comunitário", cat: "eventos agendas programações cinema praça" },
+            { nome: "🍔 Feira Gastronômica da Marambaia", cat: "eventos agendas programações comida praça" }
+        ];
+
+        // FUNÇÃO COMPLETA PARA IGNORAR ACENTOS E PLURAIS
+        function normalizarTexto(texto) {
+            if (!texto) return "";
+            var resultado = texto.toLowerCase();
+            resultado = resultado.replace(/[áàâãä]/g, "a").replace(/[éèêë]/g, "e").replace(/[íìîï]/g, "i").replace(/[óòôõö]/g, "o").replace(/[úùûü]/g, "u").replace(/[ç]/g, "c");
+            // Se terminar com 's' e for uma palavra longa, trata o plural tirando o 's'
+            if (resultado.length > 3 && resultado.substr(-1) === 's') {
+                resultado = resultado.substr(0, resultado.length - 1);
+            }
+            return resultado;
+        }
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var termoOriginal = urlParams.get('q');
+
+        if (termoOriginal) {
+            document.getElementById('termo-pesquisado').innerText = 'Resultados para: "' + termoOriginal + '"';
+            var termoNormalizado = normalizarTexto(termoOriginal);
+            var box = document.getElementById('container-resultados');
+            var encontrados = 0;
+
+            for (var i = 0; i < locaisMarambaia.length; i++) {
+                var local = locaisMarambaia[i];
+                var nomeNorm = normalizarTexto(local.nome);
+                var catNorm = normalizarTexto(local.cat);
+
+                if (nomeNorm.indexOf(termoNormalizado) > -1 || catNorm.indexOf(termoNormalizado) > -1) {
+                    encontrados++;
+                    box.innerHTML += '<div class="place-card"><div class="place-name">' + local.nome + '</div><div class="place-segment">' + local.cat + '</div></div>';
+                }
+            }
+            if (encontrados === 0) {
+                box.innerHTML = '<div class="place-card"><p style="text-align:center;color:#6c757d;">Nenhum local encontrado para esta busca.</p></div>';
+            }
+        }
+    </script>
+</body>
+</html>
