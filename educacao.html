@@ -9,105 +9,70 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: var(--fundo-offwhite); color: var(--texto-escuro); display: flex; justify-content: center; }
         .app-container { width: 100%; max-width: 450px; min-height: 100vh; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; position: relative; padding-bottom: 75px; }
-        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; gap: 15px; }
+        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
+        .header-left-side { display: flex; align-items: center; gap: 15px; }
         .back-btn { font-size: 1.2rem; text-decoration: none; color: white; }
         header h1 { font-size: 1.2rem; font-weight: 600; }
+        .lang-btn { background: var(--amarelo-manga); border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; color: var(--texto-escuro); text-decoration: none; }
         main { padding: 20px; flex-grow: 1; }
-        
-        .menu-retratil { margin-bottom: 10px; border: 1px solid var(--cinza-claro); border-radius: 8px; overflow: hidden; background: #ffffff; }
+        .menu-retratil { margin-bottom: 12px; border: 1px solid var(--cinza-claro); border-radius: 8px; overflow: hidden; background: #ffffff; }
         .menu-check { display: none; }
-        .menu-botao { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: #ffffff; font-weight: 600; font-size: 0.9rem; cursor: pointer; border-left: 5px solid var(--verde-guajara); }
+        .menu-botao { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: #ffffff; font-weight: 600; font-size: 0.92rem; cursor: pointer; border-left: 5px solid var(--verde-guajara); }
         .menu-seta { transition: transform 0.2s; font-size: 0.75rem; color: #6c757d; }
         .menu-conteudo { max-height: 0; overflow: hidden; background: #ffffff; }
-        .menu-check:checked ~ .menu-conteudo { max-height: 2000px; padding: 10px 15px; border-top: 1px solid var(--cinza-claro); }
+        .menu-check:checked ~ .menu-conteudo { max-height: 3000px; padding: 10px 15px; border-top: 1px solid var(--cinza-claro); }
         .menu-check:checked ~ .menu-botao .menu-seta { transform: rotate(90deg); }
-
+        .submenu-titulo { font-size: 0.85rem; font-weight: bold; color: var(--verde-guajara); margin: 12px 0 6px 0; border-left: 3px solid var(--amarelo-manga); padding-left: 6px; text-transform: uppercase; }
         .place-card { background: var(--fundo-offwhite); border: 1px solid var(--cinza-claro); border-radius: 8px; padding: 12px; margin: 8px 0; font-size: 0.85rem; }
         .place-name { font-size: 0.95rem; font-weight: bold; color: #0066cc; text-decoration: underline; margin-bottom: 4px; display: block; }
         .place-info { margin: 3px 0; color: #495057; }
+        nav { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 12px 15px; display: flex; justify-content: center; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; }
+        .nav-item-single { text-align: center; font-size: 0.95rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 10px 40px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: var(--verde-guajara); width: 100%; max-width: 200px; }
     </style>
 </head>
 <body>
     <div class="app-container">
-        <header><a href="index.html" class="back-btn">⬅️</a><h1>1. Serviços Educacionais</h1></header>
+        <header>
+            <div class="header-left-side">
+                <a href="index.html" class="back-btn">⬅️</a>
+                <h1>Serviços Educacionais</h1>
+            </div>
+            <a href="educacao-en.html" class="lang-btn">English 🇺🇸</a>
+        </header>
         <main>
-            
-            <!-- SUBMENU: ESTADUAIS FUNDAMENTAL I REGULARES -->
             <div class="menu-retratil">
-                <input type="checkbox" id="sub-1" class="menu-check">
-                <label for="sub-1" class="menu-botao"><span>Escolas Estaduais Fundamental I (Regulares)</span><span class="menu-seta">▶</span></label>
+                <input type="checkbox" id="m-estaduais" class="menu-check">
+                <label for="m-estaduais" class="menu-botao"><span>🎓 Escolas Estaduais</span><span class="menu-seta">▶</span></label>
                 <div class="menu-conteudo">
-                    <div class="place-card">
-                        <a href="https://google.com" target="_blank" class="place-name">Escola Estadual Ensino Regular Unidade I</a>
-                        <p class="place-info">📍 Rua da Mata, s/n - Marambaia</p>
-                        <p class="place-info">📞 Tel: (91) 3231-1000 | 🚌 Ônibus: Marambaia-Ver-o-Peso</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SUBMENU: ESTADUAIS FUNDAMENTAL I INTEGRAL -->
-            <div class="menu-retratil">
-                <input type="checkbox" id="sub-2" class="menu-check">
-                <label for="sub-2" class="menu-botao"><span>Escolas Estaduais Fundamental I (Tempo Integral)</span><span class="menu-seta">▶</span></label>
-                <div class="menu-conteudo">
-                    <div class="place-card">
-                        <a href="https://google.com" target="_blank" class="place-name">Escola Estadual de Tempo Integral Unidade II</a>
-                        <p class="place-info">📍 Av. Rodolfo Chermont, 1020</p>
-                        <p class="place-info">📞 Tel: (91) 3231-2000 | 🚌 Ônibus: Marambaia-Tupinambá</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SUBMENU: ESTADUAIS FUNDAMENTAL II REGULARES -->
-            <div class="menu-retratil">
-                <input type="checkbox" id="sub-3" class="menu-check">
-                <label for="sub-3" class="menu-botao"><span>Escolas Estaduais Fundamental II (Regulares)</span><span class="menu-seta">▶</span></label>
-                <div class="menu-conteudo">
+                    <div class="submenu-titulo">Ensino Regular</div>
                     <div class="place-card">
                         <a href="https://google.com" target="_blank" class="place-name">Escola Estadual Dr. Paulino de Brito</a>
                         <p class="place-info">📍 Av. Rodolfo Chermont, s/n - Marambaia</p>
-                        <p class="place-info">📞 Tel: (91) 3243-1515 | 🚌 Ônibus: Marex-Centro</p>
                     </div>
                 </div>
             </div>
-
-            <!-- SUBMENU: ENSINO MÉDIO REGULAR/INTEGRAL -->
             <div class="menu-retratil">
-                <input type="checkbox" id="sub-4" class="menu-check">
-                <label for="sub-4" class="menu-botao"><span>Escolas Estaduais de Ensino Médio</span><span class="menu-seta">▶</span></label>
+                <input type="checkbox" id="m-municipais" class="menu-check">
+                <label for="m-municipais" class="menu-botao"><span>🏢 Escolas Municipais</span><span class="menu-seta">▶</span></label>
                 <div class="menu-conteudo">
                     <div class="place-card">
-                        <a href="https://google.com" target="_blank" class="place-name">Colégio Sophos Marambaia (Regular)</a>
-                        <p class="place-info">📍 Av. Tavares Bastos, 1410 | 📞 (91) 3277-1200</p>
+                        <a href="https://google.com" target="_blank" class="place-name">Escola Municipal República de Portugal</a>
+                        <p class="place-info">📍 R. Anchieta, 359 - Marambaia</p>
                     </div>
                 </div>
             </div>
-
-            <!-- SUBMENU: MUNICIPAIS -->
             <div class="menu-retratil">
-                <input type="checkbox" id="sub-5" class="menu-check">
-                <label for="sub-5" class="menu-botao"><span>Escolas Municipais</span><span class="menu-seta">▶</span></label>
+                <input type="checkbox" id="m-privadas" class="menu-check">
+                <label for="m-privadas" class="menu-botao"><span>🏫 Escolas Privadas e Universidades</span><span class="menu-seta">▶</span></label>
                 <div class="menu-conteudo">
                     <div class="place-card">
-                        <a href="https://google.com" target="_blank" class="place-name">Escola M. República de Portugal</a>
-                        <p class="place-info">📍 R. Anchieta, 359 | 🚌 Ônibus: Marambaia-Castanheira</p>
+                        <a href="https://google.com" target="_blank" class="place-name">Colégio Sophos Marambaia</a>
+                        <p class="place-info">📍 Av. Tavares Bastos, 1410</p>
                     </div>
                 </div>
             </div>
-
-            <!-- SUBMENU: UNIVERSIDADES -->
-            <div class="menu-retratil">
-                <input type="checkbox" id="sub-6" class="menu-check">
-                <label for="sub-6" class="menu-botao"><span>Universidades do Bairro</span><span class="menu-seta">▶</span></label>
-                <div class="menu-conteudo">
-                    <div class="place-card">
-                        <span class="place-name">Polo Universitário Superior Marambaia</span>
-                        <p class="place-info">📍 Rod. Augusto Montenegro, Km 1</p>
-                    </div>
-                </div>
-            </div>
-
         </main>
+        <nav><a href="index.html" class="nav-item-single">🏠 Início</a></nav>
     </div>
 </body>
 </html>

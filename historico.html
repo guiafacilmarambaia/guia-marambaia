@@ -9,31 +9,40 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: var(--fundo-offwhite); color: var(--texto-escuro); display: flex; justify-content: center; }
         .app-container { width: 100%; max-width: 450px; min-height: 100vh; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; position: relative; padding-bottom: 75px; }
-        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; gap: 15px; }
+        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
+        .header-left-side { display: flex; align-items: center; gap: 15px; }
         .back-btn { font-size: 1.2rem; text-decoration: none; color: white; }
         header h1 { font-size: 1.2rem; font-weight: 600; }
+        .lang-btn { background: var(--amarelo-manga); border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; color: var(--texto-escuro); text-decoration: none; }
         main { padding: 20px; flex-grow: 1; }
-        .place-card { background: var(--fundo-offwhite); border: 1px solid var(--cinza-claro); border-radius: 8px; padding: 16px; margin: 10px 0; font-size: 0.85rem; line-height: 1.4; }
+        .place-card { background: var(--fundo-offwhite); border: 1px solid var(--cinza-claro); border-radius: 8px; padding: 16px; margin: 10px 0; font-size: 0.85rem; line-height: 1.4; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
         .place-name { font-size: 1.05rem; font-weight: bold; color: var(--verde-guajara); margin-bottom: 6px; }
         .credit-title { font-weight: bold; margin-top: 12px; border-top: 1px dashed #dee2e6; padding-top: 8px; color: #495057; }
+        nav { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 12px 15px; display: flex; justify-content: center; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; }
+        .nav-item-single { text-align: center; font-size: 0.95rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 10px 40px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: var(--verde-guajara); width: 100%; max-width: 200px; }
     </style>
 </head>
 <body>
     <div class="app-container">
-        <header><a href="index.html" class="back-btn">⬅️</a><h1>Histórico da Marambaia</h1></header>
+        <header>
+            <div class="header-left-side">
+                <a href="index.html" class="back-btn">⬅️</a>
+                <h1>Histórico do Bairro</h1>
+            </div>
+            <a href="historico-en.html" class="lang-btn">English 🇺🇸</a>
+        </header>
         <main>
             <div class="place-card">
                 <div class="place-name">Origem e Ocupação Urbana</div>
-                <p>Nascido a partir de antigos eixos e traçados ferroviários vizinhos a glebas de uso militar, o bairro expandiu-se expressivamente nas últimas décadas. A consolidação urbana deu-se com a abertura e pavimentação de grandes corredores comerciais e sociais, como a Av. Rodolfo Chermont, Av. Tavares Bastos e a icônica Rua da Marinha.</p>
-                
+                <p>Nascido a partir de antigos eixos e traçados ferroviários vizinhos a glebas de uso militar, o bairro expandiu-se expressivamente nas últimas décadas. A consolidação urbana deu-se com a abertura e pavimentação de grandes corridors comerciais e sociais, como a Av. Rodolfo Chermont, Av. Tavares Bastos e a icônica Rua da Marinha.</p>
                 <p class="credit-title">Idealizadores Científicos & Pedagógicos:</p>
-                <p>👨‍🏫 <strong>Prof. Waldinei do Carmo de Souza</strong><br><em>Professor de Geografia</em></p>
-                <p style="margin-top: 4px;">👨‍🏫 <strong>Prof. Odeny Cleidson da Silva Lima</strong><br><em>Professor de Inglês</em></p>
-                
+                <p>👨‍🏫 <strong>Prof. Odeny Cleidson da Silva Lima</strong><br><em>Professor de Inglês</em></p>
+                <p style="margin-top: 4px;">👨‍🏫 <strong>Prof. Waldinei do Carmo de Souza</strong><br><em>Professor de Geografia</em></p>
                 <p class="credit-title">Corpo Administrativo:</p>
                 <p>👤 <strong>Osvalcy Claudio Lima</strong><br><em>Administrador & Editor Geral</em></p>
             </div>
         </main>
+        <nav><a href="index.html" class="nav-item-single">🏠 Início</a></nav>
     </div>
 </body>
 </html>

@@ -3,30 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7. Ambiental - Guia Fácil Marambaia</title>
+    <title>Questões Ambientais - Marambaia</title>
     <style>
         :root { --verde-guajara: #1E5631; --amarelo-manga: #FFC107; --fundo-offwhite: #F8F9FA; --texto-escuro: #212529; --cinza-claro: #E9ECEF; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: var(--fundo-offwhite); color: var(--texto-escuro); display: flex; justify-content: center; }
         .app-container { width: 100%; max-width: 450px; min-height: 100vh; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; position: relative; padding-bottom: 75px; }
-        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; gap: 15px; }
+        
+        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
+        .header-left-side { display: flex; align-items: center; gap: 15px; }
         .back-btn { font-size: 1.2rem; text-decoration: none; color: white; }
         header h1 { font-size: 1.2rem; font-weight: 600; }
+        .lang-btn { background: var(--amarelo-manga); border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; color: var(--texto-escuro); text-decoration: none; }
+        
         main { padding: 20px; flex-grow: 1; }
-        .place-card { background: var(--fundo-offwhite); border: 1px solid var(--cinza-claro); border-radius: 8px; padding: 14px; margin: 10px 0; font-size: 0.85rem; }
-        .place-name { font-size: 1rem; font-weight: bold; color: var(--verde-guajara); margin-bottom: 6px; }
-        .place-info { margin: 4px 0; color: #495057; line-height: 1.4; }
+        .menu-retratil { margin-bottom: 12px; border: 1px solid var(--cinza-claro); border-radius: 8px; overflow: hidden; background: #ffffff; }
+        .menu-check { display: none; }
+        .menu-botao { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: #ffffff; font-weight: 600; font-size: 0.92rem; cursor: pointer; border-left: 5px solid var(--verde-guajara); }
+        .menu-seta { transition: transform 0.2s; font-size: 0.75rem; color: #6c757d; }
+        .menu-conteudo { max-height: 0; overflow: hidden; background: #ffffff; }
+        .menu-check:checked ~ .menu-conteudo { max-height: 2500px; padding: 10px 15px; border-top: 1px solid var(--cinza-claro); }
+        .menu-check:checked ~ .menu-botao .menu-seta { transform: rotate(90deg); }
+        .place-card { background: var(--fundo-offwhite); border: 1px solid var(--cinza-claro); border-radius: 8px; padding: 12px; margin: 8px 0; font-size: 0.85rem; }
+        .place-name { font-size: 0.95rem; font-weight: bold; color: var(--verde-guajara); margin-bottom: 4px; display: block; }
+        .place-info { margin: 3px 0; color: #495057; line-height: 1.4; }
+        nav { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 12px 15px; display: flex; justify-content: center; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; }
+        .nav-item-single { text-align: center; font-size: 0.95rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 10px 40px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: var(--verde-guajara); width: 100%; max-width: 200px; }
     </style>
 </head>
 <body>
     <div class="app-container">
-        <header><a href="index.html" class="back-btn">⬅️</a><h1>7. Ambiental</h1></header>
-        <main>
-            <div class="place-card">
-                <div class="place-name">🌳 Cobertura Arbórea e Canais</div>
-                <p class="place-info">Mapeamento e monitoramento da arborização das praças (Dom Alberto Ramos e Tancredo Neves) e acompanhamento das microbacias de escoamento e drenagem urbana que compõem o microclima do nosso território na Marambaia.</p>
+        <header>
+            <div class="header-left-side">
+                <a href="index.html" class="back-btn">⬅️</a>
+                <h1>Questões Ambientais</h1>
             </div>
+            <!-- Botão de tradução interligado com o inglês -->
+            <a href="ambiental-en.html" class="lang-btn">English 🇺🇸</a>
+        </header>
+        <main>
+            
+            <div class="menu-retratil">
+                <input type="checkbox" id="env-1" class="menu-check">
+                <label for="env-1" class="menu-botao"><span>🧹 Limpeza Urbana</span><span class="menu-seta">▶</span></label>
+                <div class="menu-conteudo">
+                    <div class="place-card">
+                        <span class="place-name">Cronograma de Coleta Regular</span>
+                        <p class="place-info">Informações sobre os dias e turnos de passagem dos caminhões coletores de lixo doméstico nas principais avenidas e conjuntos da Marambaia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-retratil">
+                <input type="checkbox" id="env-2" class="menu-check">
+                <label for="env-2" class="menu-botao"><span>🌳 Arborização</span><span class="menu-seta">▶</span></label>
+                <div class="menu-conteudo">
+                    <div class="place-card">
+                        <span class="place-name">Cobertura Verde do Bairro</span>
+                        <p class="place-info">Acompanhamento e preservação das árvores das praças Dom Alberto Ramos e Tancredo Neves, essenciais para o microclima do nosso território.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-retratil">
+                <input type="checkbox" id="env-3" class="menu-check">
+                <label for="env-3" class="menu-botao"><span>👮 Segurança</span><span class="menu-seta">▶</span></label>
+                <div class="menu-conteudo">
+                    <div class="place-card">
+                        <a href="https://google.com" target="_blank" class="place-name">Seccional Urbana da Marambaia</a>
+                        <p class="place-info">📍 Atendimento integrado, registros comunitários e policiamento preventivo das passagens.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-retratil">
+                <input type="checkbox" id="env-4" class="menu-check">
+                <label for="env-4" class="menu-botao"><span>♻️ Coleta Seletiva</span><span class="menu-seta">▶</span></label>
+                <div class="menu-conteudo">
+                    <div class="place-card">
+                        <span class="place-name">Pontos de Entrega Voluntária (PEVs)</span>
+                        <p class="place-info">Orientações de descarte correto de materiais recicláveis (plásticos, vidros e papéis) em benefício das cooperativas locais.</p>
+                    </div>
+                </div>
+            </div>
+
         </main>
+        <nav><a href="index.html" class="nav-item-single">🏠 Início</a></nav>
     </div>
 </body>
 </html>

@@ -3,49 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10. Estatísticas Populacionais - Marambaia</title>
+    <title>Estatísticas Populacionais - Marambaia</title>
     <style>
         :root { --verde-guajara: #1E5631; --amarelo-manga: #FFC107; --fundo-offwhite: #F8F9FA; --texto-escuro: #212529; --cinza-claro: #E9ECEF; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: var(--fundo-offwhite); color: var(--texto-escuro); display: flex; justify-content: center; }
         .app-container { width: 100%; max-width: 450px; min-height: 100vh; background-color: #ffffff; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex; flex-direction: column; position: relative; padding-bottom: 75px; }
-        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; gap: 15px; }
+        header { background-color: var(--verde-guajara); color: white; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
+        .header-left-side { display: flex; align-items: center; gap: 15px; }
         .back-btn { font-size: 1.2rem; text-decoration: none; color: white; }
-        header h1 { font-size: 1.2rem; font-weight: 600; }
+        header h1 { font-size: 1.1rem; font-weight: 600; }
+        .lang-btn { background: var(--amarelo-manga); border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; color: var(--texto-escuro); text-decoration: none; }
         main { padding: 20px; flex-grow: 1; }
-        .piramide-container { background: var(--fundo-offwhite); padding: 15px; border-radius: 12px; border: 1px solid var(--cinza-claro); margin-bottom: 15px; }
-        .barra-grafico { display: flex; align-items: center; margin: 8px 0; font-size: 0.85rem; }
-        .barra-rotulo { width: 80px; font-weight: 600; }
-        .barra-total { flex-grow: 1; background: #dee2e6; height: 16px; border-radius: 4px; overflow: hidden; position: relative; }
+        .piramide-container { background: #ffffff; padding: 15px; border-radius: 12px; border: 1px solid var(--cinza-claro); box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .barra-grafico { display: flex; align-items: center; margin: 12px 0; font-size: 0.85rem; }
+        .barra-rotulo { width: 130px; font-weight: 600; color: #495057; }
+        .barra-total { flex-grow: 1; background: #dee2e6; height: 18px; border-radius: 4px; overflow: hidden; position: relative; }
         .barra-preenchida { background: var(--verde-guajara); height: 100%; }
         .barra-preenchida.mulher { background: #e83e8c; }
-        .barra-num { position: absolute; right: 8px; top: -1px; font-size: 0.75rem; font-weight: bold; color: #495057; }
+        .barra-preenchida.jovens { background: #fd7e14; }
+        .barra-preenchida.adultos { background: #007bff; }
+        .barra-preenchida.idosos { background: #6f42c1; }
+        .barra-num { position: absolute; right: 8px; top: 0px; font-size: 0.75rem; font-weight: bold; color: #212529; }
+        nav { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 12px 15px; display: flex; justify-content: center; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; }
+        .nav-item-single { text-align: center; font-size: 0.95rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 10px 40px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: var(--verde-guajara); width: 100%; max-width: 200px; }
     </style>
 </head>
 <body>
     <div class="app-container">
-        <header><a href="index.html" class="back-btn">⬅️</a><h1>10. Estatísticas Populacionais</h1></header>
+        <header>
+            <div class="header-left-side">
+                <a href="index.html" class="back-btn">⬅️</a>
+                <h1>Estatísticas do Bairro</h1>
+            </div>
+            <a href="populacao-en.html" class="lang-btn">English 🇺🇸</a>
+        </header>
         <main>
             <div class="piramide-container">
-                <p style="font-size:0.9rem; margin-bottom:12px;"><strong>População Registrada do Bairro:</strong> ~65.000 Habitantes</p>
                 <div class="barra-grafico">
-                    <span class="barra-rotulo">Homens</span>
-                    <div class="barra-total"><div class="barra-preenchida" style="width: 47%;"></div><span class="barra-num">47%</span></div>
+                    <span class="barra-rotulo">População Total</span>
+                    <div class="barra-total"><div class="barra-preenchida" style="width: 100%; background: #212529;"></div><span class="barra-num" style="color:#ffffff;">~65.000 hab.</span></div>
                 </div>
                 <div class="barra-grafico">
-                    <span class="barra-rotulo">Mulheres</span>
+                    <span class="barra-rotulo">População Feminina</span>
                     <div class="barra-total"><div class="barra-preenchida mulher" style="width: 53%;"></div><span class="barra-num">53%</span></div>
                 </div>
                 <div class="barra-grafico">
-                    <span class="barra-rotulo">Jovens</span>
-                    <div class="barra-total"><div class="barra-preenchida" style="width: 31%; background:#fd7e14;"></div><span class="barra-num">31%</span></div>
+                    <span class="barra-rotulo">População Masculina</span>
+                    <div class="barra-total"><div class="barra-preenchida" style="width: 47%;"></div><span class="barra-num">47%</span></div>
                 </div>
                 <div class="barra-grafico">
-                    <span class="barra-rotulo">Idosos</span>
-                    <div class="barra-total"><div class="barra-preenchida" style="width: 14%; background:#6f42c1;"></div><span class="barra-num">14%</span></div>
+                    <span class="barra-rotulo">Número de Jovens</span>
+                    <div class="barra-total"><div class="barra-preenchida jovens" style="width: 31%;"></div><span class="barra-num">31%</span></div>
+                </div>
+                <div class="barra-grafico">
+                    <span class="barra-rotulo">Número de Adultos</span>
+                    <div class="barra-total"><div class="barra-preenchida adultos" style="width: 55%;"></div><span class="barra-num">55%</span></div>
+                </div>
+                <div class="barra-grafico">
+                    <span class="barra-rotulo">Número de Idosos</span>
+                    <div class="barra-total"><div class="barra-preenchida idosos" style="width: 14%;"></div><span class="barra-num">14%</span></div>
                 </div>
             </div>
         </main>
+        <nav><a href="index.html" class="nav-item-single">🏠 Início</a></nav>
     </div>
 </body>
 </html>
