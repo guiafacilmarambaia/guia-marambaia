@@ -24,188 +24,146 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            padding-bottom: 85px;
+            padding-bottom: 60px;
         }
 
         header {
             background-color: var(--verde-guajara);
             color: white;
-            padding: 20px;
+            padding: 12px 20px;
             text-align: center;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
         }
-        .header-top { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; margin-bottom: 10px; }
-        .lang-btn { background: var(--amarelo-manga); border: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; color: var(--texto-escuro); }
-        header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 3px; }
-        header p { font-size: 0.9rem; opacity: 0.9; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; margin-bottom: 5px; }
+        .lang-btn { background: var(--amarelo-manga); border: none; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; color: var(--texto-escuro); text-decoration: none; }
+        header h1 { font-size: 1.3rem; font-weight: 700; margin-bottom: 2px; }
+        header p { font-size: 0.85rem; opacity: 0.9; }
 
-        .logo-container { text-align: center; padding: 15px 0; display: flex; justify-content: center; font-size: 0.8rem; font-weight: bold; color: #6c757d; line-height: 1.2; }
+        .logo-container { text-align: center; padding: 8px 0; display: flex; justify-content: center; font-size: 0.8rem; font-weight: bold; color: #6c757d; line-height: 1.2; }
 
-        main { padding: 5px 20px 20px 20px; flex-grow: 1; }
-        .section-title { font-size: 1.1rem; margin-bottom: 15px; color: var(--verde-guajara); font-weight: 600; border-bottom: 2px solid var(--amarelo-manga); padding-bottom: 4px; }
+        main { padding: 0 20px 20px 20px; flex-grow: 1; overflow-y: auto; }
+        .section-title { font-size: 1rem; margin-bottom: 10px; color: var(--verde-guajara); font-weight: 600; border-bottom: 2px solid var(--amarelo-manga); padding-bottom: 2px; }
         
-        .categories-grid { display: flex; flex-direction: column; gap: 12px; }
+        .categories-grid { display: flex; flex-direction: column; gap: 8px; }
         .category-link { text-decoration: none; color: inherit; display: block; }
         
         .category-card { 
             background-color: #ffffff; 
             border: 1px solid var(--cinza-claro);
             border-left: 5px solid var(--amarelo-manga); 
-            padding: 16px; 
+            padding: 12px 16px; 
             border-radius: 8px; 
             display: flex; 
             align-items: center; 
             justify-content: space-between;
             cursor: pointer; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
         .category-card.destaque-azul { border-left-color: #007bff; background-color: #e2f0fe; }
         
         .card-main-info { display: flex; align-items: center; }
-        .category-icon { font-size: 1.4rem; margin-right: 15px; display: inline-block; vertical-align: middle; }
-        .category-info h3 { font-size: 0.95rem; font-weight: 600; color: var(--texto-escuro); }
-        .category-seta { color: #6c757d; font-size: 0.8rem; }
+        .category-icon { font-size: 1.3rem; margin-right: 12px; }
+        .category-info h3 { font-size: 0.9rem; font-weight: 600; color: var(--texto-escuro); }
+        .category-seta { color: #6c757d; font-size: 0.75rem; }
         
-        nav { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 12px 15px; display: flex; justify-content: space-between; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; gap: 10px; }
-        .nav-item { text-align: center; font-size: 0.95rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 5px; padding: 10px; border-radius: 4px; flex-grow: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .nav-item.btn-nav-inicio { background-color: #1E5631; }
-        .nav-item.btn-nav-mapa { background-color: #0088cc; }
-        .nav-item.btn-nav-eventos { background-color: #cc3300; }
+        nav { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 10px 15px; display: flex; justify-content: center; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; }
+        .nav-item-btn { text-align: center; font-size: 0.95rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; padding: 10px 40px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: var(--verde-guajara); width: 100%; max-width: 200px; }
     </style>
 </head>
 <body>
     <div class="app-container">
         <header>
             <div class="header-top">
-                <span>Quinta, 22 de Out. de 2026 - 01:54</span>
-                <a href="index-en.html" class="lang-btn" style="text-decoration: none;">English 🇺🇸</a>
+                <span id="relogio-pt" style="font-weight: 500;">Carregando...</span>
+                <a href="index-en.html" class="lang-btn">English 🇺🇸</a>
             </div>
             <h1>Guia Fácil Marambaia</h1>
             <p>Tudo do nosso bairro em um só lugar</p>
         </header>
         
-        <div class="logo-container">
-            <div>Logo Guia Fácil<br>Marambaia</div>
-        </div>
+        <div class="logo-container"><div>Logo Guia Fácil<br>Marambaia</div></div>
         
         <main>
             <h2 class="section-title">Menu do Aplicativo</h2>
             <div class="categories-grid">
-                
                 <a href="historico.html" class="category-link">
                     <div class="category-card destaque-azul">
-                        <div class="card-main-info">
-                            <span class="category-icon">📋</span>
-                            <div class="category-info"><h3>Histórico do Bairro da Marambaia</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">编</span><div class="category-info"><h3>Histórico do Bairro da Marambaia</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
                 <a href="saude.html" class="category-link">
                     <div class="category-card">
-                        <div class="card-main-info">
-                            <span class="category-icon">🏥</span>
-                            <div class="category-info"><h3>Serviços de Saúde</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">🏥</span><div class="category-info"><h3>Serviços de Saúde</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
                 <a href="educacao.html" class="category-link">
                     <div class="category-card">
-                        <div class="card-main-info">
-                            <span class="category-icon">🎓</span>
-                            <div class="category-info"><h3>Serviços Educacionais</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">🎓</span><div class="category-info"><h3>Serviços Educacionais</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
                 <a href="lazer.html" class="category-link">
                     <div class="category-card">
-                        <div class="card-main-info">
-                            <span class="category-icon">🌳</span>
-                            <div class="category-info"><h3>Cultura & Lazer</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">🌳</span><div class="category-info"><h3>Cultura & Lazer</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
                 <a href="gourmet.html" class="category-link">
                     <div class="category-card">
-                        <div class="card-main-info">
-                            <span class="category-icon">🍔</span>
-                            <div class="category-info"><h3>Espaço Gourmet</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">🍔</span><div class="category-info"><h3>Espaço Gourmet</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
                 <a href="transporte.html" class="category-link">
                     <div class="category-card">
-                        <div class="card-main-info">
-                            <span class="category-icon">🚌</span>
-                            <div class="category-info"><h3>Tipos de Transportes</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">🚌</span><div class="category-info"><h3>Tipos de Transportes</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
                 <a href="religioso.html" class="category-link">
                     <div class="category-card">
-                        <div class="card-main-info">
-                            <span class="category-icon">⛪</span>
-                            <div class="category-info"><h3>Religiosidades</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">⛪</span><div class="category-info"><h3>Religiosidades</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
                 <a href="comercio.html" class="category-link">
                     <div class="category-card">
-                        <div class="card-main-info">
-                            <span class="category-icon">🛍️</span>
-                            <div class="category-info"><h3>Feiras e Comércios</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">🛍️</span><div class="category-info"><h3>Feiras e Comércios</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
                 <a href="populacao.html" class="category-link">
                     <div class="category-card">
-                        <div class="card-main-info">
-                            <span class="category-icon">📊</span>
-                            <div class="category-info"><h3>Estatísticas Populacionais do Bairro</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">📊</span><div class="category-info"><h3>Estatísticas Populacionais do Bairro</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
                 <a href="ambiental.html" class="category-link">
                     <div class="category-card">
-                        <div class="card-main-info">
-                            <span class="category-icon">🌱</span>
-                            <div class="category-info"><h3>Questões Ambientais</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">🌱</span><div class="category-info"><h3>Questões Ambientais</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
-                <!-- CORREÇÃO CIRÚRGICA: PRANCHETA, TEXTO E SETA EM HARMONIA ABSOLUTA -->
                 <a href="sobre.html" class="category-link">
                     <div class="category-card destaque-azul">
-                        <div class="card-main-info">
-                            <span class="category-icon">📋</span>
-                            <div class="category-info"><h3>Sobre o Projeto</h3></div>
-                        </div>
+                        <div class="card-main-info"><span class="category-icon">📋</span><div class="category-info"><h3>Sobre o Projeto</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-
             </div>
         </main>
-
-        <nav>
-            <a href="index.html" class="nav-item btn-nav-inicio">🏠 Início</a>
+        <nav><a href="index.html" class="nav-item-btn">🏠 Início</a></nav>
+    </div>
+    <script>
+        function clockPt() {
+            const date = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            let str = date.toLocaleDateString('pt-BR', options);
+            document.getElementById('relogio-pt').innerText = str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        setInterval(clockPt, 1000); clockPt();
+    </script>
+</body>
+</html>
