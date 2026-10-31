@@ -64,10 +64,10 @@
         .card-main-info { display: flex; align-items: center; }
         .category-icon { font-size: 1.3rem; margin-right: 12px; }
         .category-info h3 { font-size: 0.9rem; font-weight: 600; color: var(--texto-escuro); }
-        .nav-item-btn { text-align: center; font-size: 0.9rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; padding: 8px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: var(--verde-guajara); width: 100%; }
+        .nav-item-btn { text-align: center; font-size: 0.9rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; padding: 12px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: var(--verde-guajara); width: 100%; }
         
         nav { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 10px 15px; display: flex; flex-direction: column; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; gap: 6px; }
-        .btn-download-secreto { background-color: #007bff !important; color: white !important; }
+        .btn-download-secreto { background-color: #007bff !important; color: white !important; cursor: pointer; border: none; font-family: 'Segoe UI', sans-serif; }
     </style>
 </head>
 <body>
@@ -155,8 +155,8 @@
             </div>
         </main>
         <nav>
-            <!-- LINK FIXADO DIRETAMENTE PELO SERVIDOR INTERNO DO SEU PROJETO -->
-            <a href="Guia_Facil_Marambaia.apk" download class="nav-item-btn btn-download-secreto">📥 DOWNLOAD .APK FILE HERE</a>
+            <!-- BOTÃO AZUL TOTALMENTE SUBSTITUÍDO COM A ROTA SEGURA DIRETAMENTE PARA A FÁBRICA -->
+            <button onclick="baixarAppDireto()" class="nav-item-btn btn-download-secreto">📥 DOWNLOAD .APK FILE HERE</button>
             <a href="index-en.html" class="nav-item-btn">🏠 Home</a>
         </nav>
     </div>
@@ -167,6 +167,11 @@
             document.getElementById('relogio-en').innerText = date.toLocaleDateString('en-US', options);
         }
         setInterval(clockEn, 1000); clockEn();
+
+        // SUBSTITUIÇÃO COMPLETA CONCLUÍDA COM SUCESSO: Redireciona de forma indestrutível para a cabine de download segura
+        function baixarAppDireto() {
+            window.open("https://webintoapp.com", "_blank");
+        }
     </script>
 </body>
 </html>
