@@ -88,7 +88,7 @@
             <div class="categories-grid">
                 <a href="historico.html" class="category-link">
                     <div class="category-card destaque-azul">
-                        <div class="card-main-info"><span class="category-icon">编</span><div class="category-info"><h3>Histórico do Bairro da Marambaia</h3></div></div>
+                        <div class="card-main-info"><span class="category-icon">📖</span><div class="category-info"><h3>Histórico do Bairro da Marambaia</h3></div></div>
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
@@ -110,7 +110,8 @@
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-                <a href="gourmet.html" class="category-link">
+                <!-- LINHA ALTERADA COM SUCESSO ABAIXO PARA GOURMET2 -->
+                <a href="gourmet2.html" class="category-link">
                     <div class="category-card">
                         <div class="card-main-info"><span class="category-icon">🍔</span><div class="category-info"><h3>Espaço Gourmet</h3></div></div>
                         <span class="category-seta">▶</span>
@@ -154,8 +155,10 @@
                 </a>
             </div>
         </main>
+        
         <nav><a href="index.html" class="nav-item-btn">🏠 Início</a></nav>
     </div>
+
     <script>
         function clockPt() {
             const date = new Date();
@@ -163,7 +166,8 @@
             let str = date.toLocaleDateString('pt-BR', options);
             document.getElementById('relogio-pt').innerText = str.charAt(0).toUpperCase() + str.slice(1);
         }
-        setInterval(clockPt, 1000); clockPt();
+        setInterval(clockPt, 1000); 
+        clockPt();
     </script>
 </body>
 </html>

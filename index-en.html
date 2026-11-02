@@ -110,7 +110,8 @@
                         <span class="category-seta">▶</span>
                     </div>
                 </a>
-                <a href="gourmet.html" class="category-link">
+                <!-- LINHA ALTERADA COM SUCESSO ABAIXO PARA GOURMET-EN2 -->
+                <a href="gourmet-en2.html" class="category-link">
                     <div class="category-card">
                         <div class="card-main-info"><span class="category-icon">🍔</span><div class="category-info"><h3>Gourmet Space</h3></div></div>
                         <span class="category-seta">▶</span>
@@ -154,21 +155,22 @@
                 </a>
             </div>
         </main>
+        
         <nav>
-            <!-- BOTÃO AZUL TOTALMENTE SUBSTITUÍDO COM A ROTA SEGURA DIRETAMENTE PARA A FÁBRICA -->
             <button onclick="baixarAppDireto()" class="nav-item-btn btn-download-secreto">📥 DOWNLOAD .APK FILE HERE</button>
             <a href="index-en.html" class="nav-item-btn">🏠 Home</a>
         </nav>
     </div>
+
     <script>
         function clockEn() {
             const date = new Date();
             const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
             document.getElementById('relogio-en').innerText = date.toLocaleDateString('en-US', options);
         }
-        setInterval(clockEn, 1000); clockEn();
+        setInterval(clockEn, 1000); 
+        clockEn();
 
-        // SUBSTITUIÇÃO COMPLETA CONCLUÍDA COM SUCESSO: Redireciona de forma indestrutível para a cabine de download segura
         function baixarAppDireto() {
             window.open("https://webintoapp.com", "_blank");
         }
