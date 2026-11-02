@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Space - Easy Guide</title>
+    <style>
+        :root {
+            --verde-guajara: #1E5631;
+            --amarelo-manga: #FFC107;
+            --fundo-offwhite: #F8F9FA;
+            --texto-escuro: #212529;
+            --cinza-claro: #E9ECEF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--fundo-offwhite); color: var(--texto-escuro); display: flex; justify-content: center; }
+        
+        .app-container {
+            width: 100%;
+            max-width: 450px;
+            min-height: 100vh;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-bottom: 80px;
+        }
+
+        header {
+            background-color: var(--verde-guajara);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; width: 100%; }
+        .back-btn { background: #007bff; border: none; padding: 6px 14px; border-radius: 4px; color: white; font-weight: bold; cursor: pointer; font-size: 0.85rem; display: none; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .lang-btn { background: var(--amarelo-manga); border: none; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; color: var(--texto-escuro); text-decoration: none; }
+        header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 2px; }
+        header p { font-size: 0.85rem; opacity: 0.9; }
+
+        .logo-mini-container { text-align: center; padding: 12px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .logo-mini-container img { width: 65px; height: 65px; object-fit: contain; }
+        .logo-text { font-size: 0.7rem; font-weight: bold; color: #cc3300; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        main { padding: 0 20px 20px 20px; flex-grow: 1; }
+        
+        .sub-title-box { background-color: #f0f7f4; border-bottom: 2px solid var(--verde-guajara); padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; text-align: center; }
+        .sub-title-box h2 { font-size: 0.95rem; color: #0066cc; font-weight: bold; }
+        .instrucao-txt { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #212529; }
+        
+        .food-grid { display: flex; flex-direction: column; gap: 12px; }
+        .food-card { background: #ffffff; border: 1px solid var(--cinza-claro); border-radius: 12px; padding: 12px; display: flex; align-items: center; gap: 15px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.04); position: relative; }
+        .food-thumb { width: 85px; height: 85px; border-radius: 8px; object-fit: cover; border: 1px solid #ddd; }
+        
+        .food-info { flex-grow: 1; padding-right: 15px; }
+        .food-info h3 { font-size: 1rem; font-weight: bold; margin-bottom: 4px; color: #000; }
+        .food-info p { font-size: 0.85rem; color: #444; line-height: 1.3; }
+        .seta-dir { color: #b1b1b1; font-size: 1.1rem; position: absolute; right: 12px; font-weight: bold; }
+
+        .detalhe-container { display: none; flex-direction: column; gap: 15px; }
+        .banner-foto { width: 100%; max-height: 200px; border-radius: 12px; object-fit: cover; box-shadow: 0 2px 6px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        .descricao-local { color: #cc3300; font-size: 0.95rem; font-weight: 600; text-align: center; line-height: 1.4; padding: 10px; background: #fff8f8; border-radius: 8px; border: 1px dashed #ffcccc; }
+        
+        .contatos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; }
+        .btn-contato { background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px; text-align: center; text-decoration: none; color: #000; font-size: 0.85rem; font-weight: bold; display: flex; flex-direction: column; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .btn-contato span.icon { font-size: 1.6rem; }
+        .btn-contato span.sub { font-size: 0.75rem; color: #666; font-weight: normal; margin-top: 2px; }
+
+        .accordion-item { border-bottom: 1px solid var(--cinza-claro); }
+        .accordion-header { width: 100%; background: none; border: none; padding: 12px 5px; text-align: left; font-size: 0.9rem; font-weight: bold; color: #000; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-transform: uppercase; }
+        .accordion-content { display: none; padding: 10px 5px; font-size: 0.85rem; color: #444; line-height: 1.4; background-color: #fafafa; border-radius: 4px; }
+
+        footer { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 12px 15px; display: flex; justify-content: center; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; }
+        .nav-item-btn { text-align: center; font-size: 0.95rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 40px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: var(--verde-guajara); width: 100%; max-width: 180px; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-top">
+                <button class="back-btn" id="btn-voltar-app" onclick="voltarParaLista()">⬅ Back</button>
+                <div style="flex-grow: 1;"></div>
+                <!-- Aponta de volta para o gourmet2.html em português -->
+                <a href="gourmet2.html" class="lang-btn">Português 🇧🇷</a>
+            </div>
+            <h1>Marambaia Easy Guide</h1>
+            <p>Everything about our neighborhood in one place</p>
+        </header>
+        
+        <div class="logo-mini-container">
+            <img src="assets/logo-marambaia.png" alt="Leaf Logo" onerror="this.src='https://github.io'">
+            <div class="logo-text">Marambaia Gourmet Space in Belém do Pará</div>
+        </div>
+        
+        <main>
+            <div id="tela-lista-gourmet">
+                <div class="sub-title-box">
+                    <h2>Bars and Restaurants in Marambaia</h2>
+                </div>
+                <p class="instrucao-txt">See the list below</p>
+                
+                <div class="food-grid">
+                    <div class="food-card" onclick="irParaPaginaExclusiva('pernambuco')">
+                        <img class="food-thumb" src="https://github.io" onerror="this.src='https://unsplash.com';">
+                        <div class="food-info">
+                            <h3>Pernambuco Snacks</h3>
+                            <p>Snacks You Find Here, Freshly Made with Exclusivity And For Delivery.</p>
+                        </div>
+                        <span class="seta-dir">▶</span>
+                    </div>
+
+                    <div class="food-card" onclick="irParaPaginaExclusiva('domfernando')">
+                        <img class="food-thumb" src="https://unsplash.com" alt="Dom Fernando Pizzeria">
+                        <div class="food-info">
+                            <h3>Dom Fernando Pizzeria</h3>
+                            <p>The Best Wood-Fired Pizzas In The Region. Irresistible Flavor With A Crispy Crust!</p>
+                        </div>
+                        <span class="seta-dir">▶</span>
+                    </div>
+
+                    <div class="food-card" onclick="irParaPaginaExclusiva('papaleguas')">
+                        <img class="food-thumb" src="https://unsplash.com" alt="Papa-léguas Delivery">
+                        <div class="food-info">
+                            <h3>Papa-léguas Delivery</h3>
+                            <p>Ultra Fast Delivery Of Meals And Juicy Burgers. Hungry? Just Call, It Arrives!</p>
+                        </div>
+                        <span class="seta-dir">▶</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tela-detalhe-gourmet" class="detalhe-container">
+                <img id="detalhe-img" class="banner-foto" src="" alt="Place Photo">
+                <p id="detalhe-comentario" class="descricao-local"></p>
+                
+                <h3 style="font-size: 0.9rem; color: #cc3300; text-align: center; font-weight: bold; margin-top: 5px;">CONTACTS</h3>
+                
+                <div class="contatos-grid">
+                    <a id="link-tel" href="#" class="btn-contato">
+                        <span class="icon">📞</span>
+                        <span>Phone</span>
+                        <span id="txt-tel" class="sub"></span>
+                    </a>
+                    <a id="link-wpp" href="#" target="_blank" class="btn-contato">
+                        <span class="icon">💬</span>
+                        <span>Whatsapp</span>
+                        <span id="txt-wpp" class="sub"></span>
+                    </a>
+                    <a id="link-site" href="#" target="_blank" class="btn-contato">
+                        <span class="icon">🏠</span>
+                        <span>Website</span>
+                    </a>
