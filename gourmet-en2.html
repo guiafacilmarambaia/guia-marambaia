@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
     <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gourmet Space - Easy Guide</title>
     <style>
@@ -35,7 +36,7 @@
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
         }
-        .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; width: 100%; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; margin-bottom: 5px; width: 100%; }
         .back-btn { background: #007bff; border: none; padding: 6px 14px; border-radius: 4px; color: white; font-weight: bold; cursor: pointer; font-size: 0.85rem; display: none; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         .lang-btn { background: var(--amarelo-manga); border: none; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; color: var(--texto-escuro); text-decoration: none; }
         header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 2px; }
@@ -83,7 +84,6 @@
             <div class="header-top">
                 <button class="back-btn" id="btn-voltar-app" onclick="voltarParaLista()">⬅ Back</button>
                 <div style="flex-grow: 1;"></div>
-                <!-- Aponta de volta para o gourmet2.html em português -->
                 <a href="gourmet2.html" class="lang-btn">Português 🇧🇷</a>
             </div>
             <h1>Marambaia Easy Guide</h1>
@@ -104,7 +104,7 @@
                 
                 <div class="food-grid">
                     <div class="food-card" onclick="irParaPaginaExclusiva('pernambuco')">
-                        <img class="food-thumb" src="https://github.io" onerror="this.src='https://unsplash.com';">
+                        <img class="food-thumb" src="https://unsplash.com" alt="Pernambuco Snacks">
                         <div class="food-info">
                             <h3>Pernambuco Snacks</h3>
                             <p>Snacks You Find Here, Freshly Made with Exclusivity And For Delivery.</p>
@@ -148,8 +148,4 @@
                         <span class="icon">💬</span>
                         <span>Whatsapp</span>
                         <span id="txt-wpp" class="sub"></span>
-                    </a>
-                    <a id="link-site" href="#" target="_blank" class="btn-contato">
-                        <span class="icon">🏠</span>
-                        <span>Website</span>
                     </a>
