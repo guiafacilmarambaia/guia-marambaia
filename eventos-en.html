@@ -37,7 +37,9 @@
             border-bottom-right-radius: 20px;
         }
         .header-top { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; margin-bottom: 5px; width: 100%; }
-        .back-btn { background: #007bff; border: none; padding: 6px 14px; border-radius: 4px; color: white; font-weight: bold; cursor: pointer; font-size: 0.85rem; display: none; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        
+        /* Blue Back Button matching your professional design model */
+        .back-btn { background: #007bff; border: none; padding: 6px 14px; border-radius: 4px; color: white; font-weight: bold; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); text-decoration: none; }
         .lang-btn { background: var(--amarelo-manga); border: none; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; color: var(--texto-escuro); text-decoration: none; }
         header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 2px; }
         header p { font-size: 0.85rem; opacity: 0.9; }
@@ -50,29 +52,25 @@
         
         .sub-title-box { background-color: #f0f7f4; border-bottom: 2px solid var(--verde-guajara); padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; text-align: center; }
         .sub-title-box h2 { font-size: 0.95rem; color: #0066cc; font-weight: bold; }
-        .instrucao-txt { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #212529; }
+        .instrucao-txt { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #212529; text-align: center; }
         
-        .event-grid { display: flex; flex-direction: column; gap: 12px; }
-        .event-card { background: #ffffff; border: 1px solid var(--cinza-claro); border-left: 5px solid #007bff; border-radius: 12px; padding: 12px; display: flex; align-items: center; gap: 15px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.04); position: relative; }
-        .event-thumb { width: 85px; height: 85px; border-radius: 8px; object-fit: cover; border: 1px solid #ddd; }
+        /* INTEGRATED EVENT MURAL CARD */
+        .mural-card { background: #ffffff; border: 1px solid var(--cinza-claro); border-top: 4px solid #007bff; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .mural-header { display: flex; gap: 15px; align-items: center; margin-bottom: 12px; }
+        .mural-thumb { width: 70px; height: 70px; border-radius: 8px; object-fit: cover; background: #e2f0fe; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; text-align: center; font-weight: bold; color: #0056b3; line-height: 1.2; border: 1px solid #bce0fd; }
+        .mural-title h3 { font-size: 1.05rem; font-weight: bold; color: #000; }
+        .mural-title p { font-size: 0.85rem; color: #cc3300; font-weight: 600; margin-top: 2px; }
         
-        .event-info { flex-grow: 1; padding-right: 15px; }
-        .event-info h3 { font-size: 1rem; font-weight: bold; margin-bottom: 4px; color: #000; }
-        .event-info p { font-size: 0.85rem; color: #444; line-height: 1.3; }
-        .seta-dir { color: #b1b1b1; font-size: 1.1rem; position: absolute; right: 12px; font-weight: bold; }
-
-        .detalhe-container { display: none; flex-direction: column; gap: 15px; }
-        .banner-foto { width: 100%; max-height: 200px; border-radius: 12px; object-fit: cover; box-shadow: 0 2px 6px rgba(0,0,0,0.1); border: 1px solid #ddd; }
-        .descricao-local { color: #cc3300; font-size: 0.95rem; font-weight: 600; text-align: center; line-height: 1.4; padding: 10px; background: #fff8f8; border-radius: 8px; border: 1px dashed #ffcccc; }
+        .mural-desc { font-size: 0.9rem; color: #333; line-height: 1.45; margin-bottom: 15px; background: #fafafa; padding: 10px; border-radius: 6px; border-left: 3px solid #ffc107; }
         
-        .contatos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; }
-        .btn-contato { background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px; text-align: center; text-decoration: none; color: #000; font-size: 0.85rem; font-weight: bold; display: flex; flex-direction: column; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .btn-contato span.icon { font-size: 1.6rem; }
-        .btn-contato span.sub { font-size: 0.75rem; color: #666; font-weight: normal; margin-top: 2px; }
-
-        .accordion-item { border-bottom: 1px solid var(--cinza-claro); }
-        .accordion-header { width: 100%; background: none; border: none; padding: 12px 5px; text-align: left; font-size: 0.9rem; font-weight: bold; color: #000; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-transform: uppercase; }
-        .accordion-content { display: none; padding: 10px 5px; font-size: 0.85rem; color: #444; line-height: 1.4; background-color: #fafafa; border-radius: 4px; }
+        /* EXCLUSIVE MEDIA SPACE FOR VIDEOS AND PHOTOS ON THE SAME SCREEN */
+        .media-box { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #ddd; }
+        .media-title { font-size: 0.85rem; font-weight: bold; color: #1e5631; text-transform: uppercase; letter-spacing: 0.5px; }
+        .video-placeholder { width: 100%; height: 180px; background: #000; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9rem; font-weight: bold; position: relative; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
+        .video-placeholder::before { content: '▶'; font-size: 2rem; color: #ff0000; margin-right: 8px; }
+        
+        .fotos-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .foto-placeholder { width: 100%; height: 110px; background: #f0f0f0; border-radius: 8px; border: 1px dashed #bbb; display: flex; align-items: center; justify-content: center; color: #666; font-size: 0.8rem; font-weight: bold; text-align: center; }
 
         footer { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 12px 15px; display: flex; justify-content: center; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; }
         .nav-item-btn { text-align: center; font-size: 0.95rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 40px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: var(--verde-guajara); width: 100%; max-width: 180px; }
@@ -82,7 +80,8 @@
     <div class="app-container">
         <header>
             <div class="header-top">
-                <button class="back-btn" id="btn-voltar-app" onclick="voltarParaLista()">⬅ Back</button>
+                <!-- Connected Blue Back Button to return to index-en.html -->
+                <a href="index-en.html" class="back-btn">⬅ Back</a>
                 <div style="flex-grow: 1;"></div>
                 <a href="eventos.html" class="lang-btn">Português 🇧🇷</a>
             </div>
@@ -90,65 +89,43 @@
             <p>Everything about our neighborhood in one place</p>
         </header>
         
+        <!-- FIXED AND CENTERED LOGO AT THE TOP -->
         <div class="logo-mini-container">
             <img src="assets/logo-marambaia.png" alt="Leaf Logo" onerror="this.src='https://github.io'">
             <div class="logo-text">Marambaia Educational Events in Belém do Pará</div>
         </div>
         
         <main>
-            <div id="tela-lista-eventos">
-                <div class="sub-title-box">
-                    <h2>School Events Calendar</h2>
-                </div>
-                <p class="instrucao-txt">See the events below</p>
-                
-                <div class="event-grid">
-                    <div class="event-card" onclick="irParaPaginaExclusiva('jogos_hilda')">
-                        <img class="event-thumb" src="https://unsplash.com" alt="School Games">
-                        <div class="event-info">
-                            <h3>School Games - Hilda Vieira School</h3>
-                            <p>Period: Nov 03 to 06, 2026. Official opening, student presentations, and interclass competitions!</p>
-                        </div>
-                        <span class="seta-dir">▶</span>
-                    </div>
-                </div>
+            <div class="sub-title-box">
+                <h2>School Events Calendar</h2>
             </div>
-
-            <div id="tela-detalhe-evento" class="detalhe-container">
-                <img id="detalhe-img" class="banner-foto" src="" alt="Event Photo">
-                <p id="detalhe-comentario" class="descricao-local"></p>
-                
-                <h3 style="font-size: 0.9rem; color: #cc3300; text-align: center; font-weight: bold; margin-top: 5px;">INFORMATION</h3>
-                
-                <div class="contatos-grid">
-                    <a id="link-tel" href="#" class="btn-contato">
-                        <span class="icon">⏰</span>
-                        <span>Schedule</span>
-                        <span id="txt-tel" class="sub"></span>
-                    </a>
-                    <a id="link-wpp" href="#" target="_blank" class="btn-contato">
-                        <span class="icon">📅</span>
-                        <span>Period</span>
-                        <span id="txt-wpp" class="sub"></span>
-                    </a>
-                    <a id="link-site" href="#" target="_blank" class="btn-contato">
-                        <span class="icon">🏫</span>
-                        <span>School</span>
-                    </a>
-                    <a id="link-mapa" href="#" target="_blank" class="btn-contato">
-                        <span class="icon">🗺️</span>
-                        <span>Location</span>
-                    </a>
-                </div>
-
-                <div style="margin-top: 10px;">
-                    <div class="accordion-item">
-                        <button class="accordion-header" onclick="toggleAccordion('acc-end')"><span>Event Schedule</span> <span>▼</span></button>
-                        <div id="acc-end" class="accordion-content"></div>
+            <p class="instrucao-txt">See the events below</p>
+            
+            <!-- EVENT MURAL: NO NEXT PAGE, EVERYTHING IS RIGHT HERE -->
+            <div class="mural-card">
+                <div class="mural-header">
+                    <div class="mural-thumb">School<br>Games</div>
+                    <div class="mural-title">
+                        <h3>School Games - Hilda Vieira School</h3>
+                        <p>Period: November 03 to 06, 2026</p>
                     </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header" onclick="toggleAccordion('acc-pag')"><span>Participants & Teams</span> <span>▼</span></button>
-                        <div id="acc-pag" class="accordion-content"></div>
+                </div>
+                
+                <div class="mural-desc">
+                    Official opening with the parade of delegations, cultural presentations by the classes during the morning shift until noon, and the start of the exciting interclass sports competitions!
+                </div>
+                
+                <!-- RESERVED SPACE FOR EVENT VIDEOS AND PHOTOS -->
+                <div class="media-box">
+                    <div class="media-title">📺 Presentations Video:</div>
+                    <!-- Video Box -->
+                    <div class="video-placeholder">Official Opening Video (Morning)</div>
+                    
+                    <div class="media-title" style="margin-top: 8px;">📸 Event Photos:</div>
+                    <!-- Photos Box -->
+                    <div class="fotos-container">
+                        <div class="foto-placeholder">Team 1 Photo</div>
+                        <div class="foto-placeholder">Presentations Photo</div>
                     </div>
                 </div>
             </div>
@@ -158,3 +135,5 @@
             <a href="index-en.html" class="nav-item-btn">🏠 Home</a>
         </footer>
     </div>
+</body>
+</html>
