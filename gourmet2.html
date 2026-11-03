@@ -51,7 +51,6 @@
         .sub-title-box h2 { font-size: 0.95rem; color: #0066cc; font-weight: bold; }
         .instrucao-txt { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #212529; text-align: center; }
         
-        /* CARD DO MURAL COMPLETO EM TELA ÚNICA */
         .gourmet-card { background: #ffffff; border: 1px solid var(--cinza-claro); border-radius: 12px; padding: 14px; display: flex; gap: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); margin-bottom: 15px; align-items: flex-start; }
         .gourmet-thumb { width: 110px; height: 110px; border-radius: 8px; object-fit: cover; border: 1px solid #ddd; flex-shrink: 0; }
         
@@ -60,7 +59,6 @@
         .gourmet-content .desc { font-size: 0.85rem; color: #333; line-height: 1.35; }
         .gourmet-content .end { font-size: 0.8rem; color: #666; font-style: italic; margin-top: 2px; }
         
-        /* BOTOES DE AÇÃO DIRETOS */
         .gourmet-actions { display: flex; gap: 15px; margin-top: 8px; align-items: center; }
         .action-link { display: flex; align-items: center; gap: 4px; text-decoration: none; color: #000; font-size: 0.85rem; font-weight: bold; cursor: pointer; }
         .action-link:hover { opacity: 0.8; }
@@ -82,8 +80,9 @@
             <p>Tudo do nosso bairro em um só lugar</p>
         </header>
         
+        <!-- LINK CORRIGIDO DA LOGO SEM LOOP INFINITO -->
         <div class="logo-mini-container">
-            <img src="assets/logo-marambaia.png" alt="Logo Folha" onerror="this.src='https://github.io'">
+            <img src="https://github.io" alt="Logo Folha">
             <div class="logo-text">ESPAÇO GOURMET DA MARAMBAIA EM BELÉM DO PARÁ</div>
         </div>
         
@@ -93,8 +92,6 @@
             </div>
             <p class="instrucao-txt">Veja a lista abaixo</p>
             
-            <!-- LISTAGEM MURAL UM EMBAIXO DO OUTRO -->
-            
             <!-- 1. LANCHES PERNAMBUCO -->
             <div class="gourmet-card">
                 <img class="gourmet-thumb" src="https://unsplash.com" alt="Lanches Pernambuco">
@@ -103,10 +100,12 @@
                     <div class="desc">Lanches Você Encontra Aqui, Feitos na hora com Exclusividade e para Delivery.</div>
                     <div class="end">Endereço: Rua da Mata, nº 340 (esquina com a Rodolfo Chermont) - Marambaia, Belém - PA.</div>
                     <div class="gourmet-actions">
-                        <a href="https://whatsapp.com" target="_blank" class="action-link">
+                        <!-- LINK DIRETO WA.ME SEM PAGINA DE DOWNLOAD CHATA -->
+                        <a href="https://wa.me" target="_blank" class="action-link">
                             <span class="action-icon">💬</span>
                             <span>(91) 98077-0315</span>
                         </a>
+                        <!-- LINK DIRETOR DE ROTA DO GOOGLE MAPS -->
                         <a href="https://google.com" target="_blank" class="action-link">
                             <span class="action-icon">🗺️</span>
                             <span>como chegar</span>
@@ -123,7 +122,7 @@
                     <div class="desc">Fazer Texto aqui</div>
                     <div class="end">Endereço: Bairro da Marambaia - Belém - PA.</div>
                     <div class="gourmet-actions">
-                        <a href="https://whatsapp.com" target="_blank" class="action-link">
+                        <a href="https://wa.me" target="_blank" class="action-link">
                             <span class="action-icon">💬</span>
                             <span>(91) 3231-9185</span>
                         </a>
@@ -143,7 +142,7 @@
                     <div class="desc">"Comida muito boa, cerveja gelada, açaí delicioso."</div>
                     <div class="end">Endereço: Bairro da Marambaia - Belém - PA.</div>
                     <div class="gourmet-actions">
-                        <a href="https://whatsapp.com" target="_blank" class="action-link">
+                        <a href="https://wa.me" target="_blank" class="action-link">
                             <span class="action-icon">💬</span>
                             <span>Whatsapp</span>
                         </a>
