@@ -24,60 +24,69 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            padding-bottom: 80px;
+            padding-bottom: 70px;
         }
 
         header {
             background-color: var(--verde-guajara);
             color: white;
-            padding: 15px 20px;
-            text-align: center;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
         }
-        .header-top { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; margin-bottom: 5px; width: 100%; }
-        .back-btn { background: #007bff; border: none; padding: 6px 14px; border-radius: 4px; color: white; font-weight: bold; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); text-decoration: none; }
-        .lang-btn { background: var(--amarelo-manga); border: none; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; cursor: pointer; color: var(--texto-escuro); text-decoration: none; }
-        header h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 2px; }
-        header p { font-size: 0.85rem; opacity: 0.9; }
+        .back-box { background-color: #007bff; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.3); text-decoration: none; color: white; font-weight: bold; font-size: 1rem; }
+        .header-title-block { text-align: center; flex-grow: 1; padding: 0 5px; }
+        .header-title-block h1 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1px; }
+        .header-title-block p { font-size: 0.75rem; opacity: 0.9; }
+        .lang-btn { background: var(--amarelo-manga); border: none; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.7rem; cursor: pointer; color: var(--texto-escuro); text-decoration: none; }
 
-        .logo-mini-container { text-align: center; padding: 12px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .logo-mini-container img { width: 90px; height: 90px; object-fit: contain; }
-        .logo-text { font-size: 0.7rem; font-weight: bold; color: #cc3300; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .logo-mini-container { text-align: center; padding: 4px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 2px; }
+        .logo-mini-container img { width: 65px; height: 65px; object-fit: contain; }
+        .logo-text { font-size: 0.65rem; font-weight: bold; color: #cc3300; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.3px; }
 
-        main { padding: 0 20px 20px 20px; flex-grow: 1; }
+        main { padding: 0 15px 15px 15px; flex-grow: 1; }
         
-        .sub-title-box { background-color: #f0f7f4; border-bottom: 2px solid var(--verde-guajara); padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; text-align: center; }
-        .sub-title-box h2 { font-size: 0.95rem; color: #0066cc; font-weight: bold; }
-        .instrucao-txt { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #212529; text-align: center; }
+        .sub-title-box { background-color: #f0f7f4; border-bottom: 2px solid var(--verde-guajara); padding: 6px 10px; border-radius: 6px; margin-bottom: 8px; text-align: center; }
+        .sub-title-box h2 { font-size: 0.85rem; color: #0066cc; font-weight: bold; }
+        .instrucao-txt { font-size: 0.95rem; font-weight: bold; margin-bottom: 10px; color: #212529; text-align: center; }
         
-        .gourmet-card { background: #ffffff; border: 1px solid var(--cinza-claro); border-radius: 12px; padding: 14px; display: flex; gap: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); margin-bottom: 15px; align-items: flex-start; }
-        .gourmet-thumb { width: 110px; height: 110px; border-radius: 8px; object-fit: cover; border: 1px solid #ddd; flex-shrink: 0; }
+        .gourmet-card { background: #ffffff; border: 1px solid var(--cinza-claro); border-radius: 12px; padding: 12px; display: flex; gap: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); margin-bottom: 12px; align-items: flex-start; }
+        .gourmet-thumb { width: 95px; height: 90px; border-radius: 8px; object-fit: cover; border: 1px solid #ddd; flex-shrink: 0; }
         
-        .gourmet-content { flex-grow: 1; display: flex; flex-direction: column; gap: 4px; }
-        .gourmet-content h3 { font-size: 1.1rem; font-weight: bold; color: #cc3300; }
-        .gourmet-content .desc { font-size: 0.85rem; color: #333; line-height: 1.35; }
-        .gourmet-content .end { font-size: 0.8rem; color: #666; font-style: italic; margin-top: 2px; }
-        .gourmet-content .horarios { font-size: 0.75rem; color: #1e5631; font-weight: 600; margin-top: 2px; line-height: 1.3; }
+        .gourmet-content { flex-grow: 1; display: flex; flex-direction: column; gap: 3px; }
+        .gourmet-content h3 { font-size: 1rem; font-weight: bold; color: #cc3300; }
+        .gourmet-content .desc { font-size: 0.8rem; color: #333; line-height: 1.3; }
+        .gourmet-content .end { font-size: 0.75rem; color: #666; font-style: italic; margin-top: 1px; }
+        .gourmet-content .horarios { font-size: 0.7rem; color: #1e5631; font-weight: 600; margin-top: 2px; line-height: 1.3; background: #f4fdf6; padding: 4px 6px; border-radius: 6px; border-left: 3px solid var(--verde-guajara); }
+        .gourmet-content .telefones-fixos { font-size: 0.8rem; color: #212529; font-weight: bold; margin-top: 2px; display: flex; align-items: center; gap: 4px; }
         
-        .gourmet-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; align-items: center; }
-        .action-link { display: flex; align-items: center; gap: 4px; text-decoration: none; color: #000; font-size: 0.85rem; font-weight: bold; cursor: pointer; }
-        .action-icon { font-size: 1.2rem; }
+        .gourmet-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; align-items: center; }
+        .action-link { display: flex; align-items: center; gap: 5px; text-decoration: none; color: #000; font-size: 0.8rem; font-weight: bold; cursor: pointer; }
+        
+        .wpp-icon-img { width: 20px; height: 24px; object-fit: contain; }
+        .action-icon { font-size: 1.1rem; }
 
-        footer { background-color: #ffffff; border-top: 1px solid var(--cinza-claro); padding: 12px 15px; display: flex; justify-content: center; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; }
-        .nav-item-btn { text-align: center; font-size: 0.95rem; font-weight: bold; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 40px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background-color: var(--verde-guajara); width: 100%; max-width: 180px; }
+        /* ESTILO DO MAPA INTEGRADO ADAPTÁVEL */
+        .mapa-box-container { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--cinza-claro); box-shadow: 0 2px 6px rgba(0,0,0,0.05); margin-top: 15px; margin-bottom: 15px; }
+        .mapa-box-container iframe { width: 100% !important; height: 250px !important; display: block; }
+
+        footer { background-color: var(--verde-guajara); padding: 10px 15px; display: flex; justify-content: center; position: absolute; bottom: 0; left: 0; width: 100%; z-index: 9999; border-top: 1px solid rgba(0,0,0,0.1); height: 45px; }
+        .nav-item-btn { text-align: center; font-size: 1rem; font-weight: bold; color: #ffffff; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; }
+        .nav-item-btn img { width: 20px; height: 20px; object-fit: contain; }
     </style>
 </head>
 <body>
     <div class="app-container">
         <header>
-            <div class="header-top">
-                <a href="index.html" class="back-btn">⬅ Voltar</a>
-                <div style="flex-grow: 1;"></div>
-                <a href="gourmet-en2.html" class="lang-btn">English 🇺🇸</a>
+            <a href="index.html" class="back-box">⬅</a>
+            <div class="header-title-block">
+                <h1>Guia Fácil Marambaia</h1>
+                <p>Tudo do nosso bairro em um só lugar</p>
             </div>
-            <h1>Guia Fácil Marambaia</h1>
-            <p>Tudo do nosso bairro em um só lugar</p>
+            <a href="gourmet-en2.html" class="lang-btn">English 🇺🇸</a>
         </header>
         
         <div class="logo-mini-container">
@@ -100,7 +109,7 @@
                     <div class="end">Endereço: Rua da Mata, nº 340 (esquina com a Rodolfo Chermont) - Marambaia, Belém - PA.</div>
                     <div class="gourmet-actions">
                         <a href="https://wa.me" target="_blank" class="action-link">
-                            <span class="action-icon">💬</span>
+                            <img class="wpp-icon-img" src="https://wikimedia.org" alt="WhatsApp">
                             <span>(91) 98077-0315</span>
                         </a>
                         <a href="https://google.com" target="_blank" class="action-link">
@@ -111,7 +120,7 @@
                 </div>
             </div>
 
-            <!-- 2. PURO SABOR (TOTALMENTE ATUALIZADO E COMPLETO) -->
+            <!-- 2. PURO SABOR -->
             <div class="gourmet-card">
                 <img class="gourmet-thumb" src="https://unsplash.com" alt="Puro Sabor">
                 <div class="gourmet-content">
@@ -119,22 +128,21 @@
                     <div class="desc">As melhores refeições caseiras com o verdadeiro sabor paraense, lanches e pratos exclusivos feitos para você.</div>
                     <div class="end">Endereço: Rua da Mata, 744 - Conjunto Médice 2, Marambaia, Belém - PA.</div>
                     <div class="horarios">
-                        🕒 Terça a Domingo: 17h às 23h (Salão & Delivery)<br>
-                        📱 iFood: 11h às 14h40 / 18h às 23h<br>
-                        ❌ Segunda-feira: Fechado
+                        <strong>Horário de Funcionamento:</strong><br>
+                        • Terça a domingo: das 17h às 23h (salão e delivery)<br>
+                        • iFood: das 11h às 14h40 e das 18h às 23h<br>
+                        • Segunda-feira: Fechado
                     </div>
+                    
+                    <div class="telefones-fixos">
+                        <span>📞 (91) 3231-9185 &nbsp;/&nbsp; (91) 3351-5583</span>
+                    </div>
+                    
                     <div class="gourmet-actions">
-                        <!-- Botão Delivery Telefônico -->
-                        <a href="tel:559132319185" class="action-link">
-                            <span class="action-icon">📞</span>
-                            <span>3231-9185</span>
-                        </a>
-                        <!-- Botão WhatsApp Encomendas NATIVO -->
                         <a href="https://wa.me" target="_blank" class="action-link">
-                            <span class="action-icon">💬</span>
+                            <img class="wpp-icon-img" src="https://wikimedia.org" alt="WhatsApp">
                             <span>(91) 99628-8403</span>
                         </a>
-                        <!-- GPS COM ROTA OFICIAL BLINDADA CONTRA ERROS -->
                         <a href="https://google.com" target="_blank" class="action-link">
                             <span class="action-icon">🗺️</span>
                             <span>como chegar</span>
@@ -150,12 +158,3 @@
                     <h3>Restaurante Peixaria Mancha</h3>
                     <div class="desc">"Comida muito boa, cerveja gelada, açaí delicioso."</div>
                     <div class="end">Endereço: Bairro da Marambaia - Belém - PA.</div>
-                    <div class="gourmet-actions">
-                        <a href="https://wa.me" target="_blank" class="action-link">
-                            <span class="action-icon">💬</span>
-                            <span>Whatsapp</span>
-                        </a>
-                        <a href="https://google.com" target="_blank" class="action-link">
-                            <span class="action-icon">🗺️</span>
-                            <span>Como chegar</span>
-                        </a>
